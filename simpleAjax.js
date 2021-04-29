@@ -1,8 +1,8 @@
 $(function () {
-  $("#load").click(handleResponse);
+  $("#load").click(function () {
+    $.get("students.txt", function (response) {
+      $("#result").empty();
+      $("#result").append(response);
+    });
+  });
 });
-
-function handleResponse() {
-  $("#result").empty();
-  $("#result").append("new");
-}
